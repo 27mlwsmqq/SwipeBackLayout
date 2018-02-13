@@ -17,7 +17,7 @@
 2.app build.gradle
 
 `dependencies {
-	         compile 'com.github.zhangliangming:SwipeBackLayout:+'
+	         compile 'com.github.zhangliangming:SwipeBackLayout:v2.0'
 	}`
 
 # 第一种调用用法 #
