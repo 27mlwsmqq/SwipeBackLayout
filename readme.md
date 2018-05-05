@@ -2,8 +2,9 @@
 该SwipeBackLayout主要实现了从左向右滑动或者从上向下滑动关闭界面功能（目前只实现是这两种功能）。
 
 # 日志 #
-## v2.1 ##
+## v2.2 ##
 1.添加混淆
+2.修复
 
 ## v1.0 ##
 1. 实现从左向右滑动或者从上向下滑动关闭界面功能
@@ -27,7 +28,7 @@
 2.app build.gradle
 
 `dependencies {
-	         compile 'com.github.zhangliangming:SwipeBackLayout:v2.1'
+	         compile 'com.github.zhangliangming:SwipeBackLayout:v2.2'
 	}`
 
 # 调用Demo #

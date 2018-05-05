@@ -20,7 +20,8 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--keep class com.zlm.libs.widget.SwipeBackLayout
--keepclassmembers class com.zlm.libs.widget.SwipeBackLayout {
+
+-keep class com.zlm.libs.widget.**
+-keepclassmembers class com.zlm.libs.widget.** {
    public *;
 }
