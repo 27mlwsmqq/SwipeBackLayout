@@ -31,6 +31,9 @@
 	         compile 'com.github.zhangliangming:SwipeBackLayout:v2.2'
 	}`
 
+# 混淆注意 #
+-keep class com.zlm.libs.widget.** { *; }
+
 # 调用Demo #
 
 链接: https://pan.baidu.com/s/1o9HK662 密码: r9v3
