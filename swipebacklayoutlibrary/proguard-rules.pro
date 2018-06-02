@@ -25,3 +25,4 @@
 -keepclassmembers class com.zlm.libs.widget.** {
    public *;
 }
+-keep class com.zlm.libs.register.** { *; }

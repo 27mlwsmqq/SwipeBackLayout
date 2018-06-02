@@ -25,6 +25,8 @@ import android.view.animation.LinearInterpolator;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+import com.zlm.libs.register.RegisterHelper;
+
 /**
  * @Description: 右滑动关闭界面或者下拉关闭界面；这里使用ValueAnimator来实现，当然也可以使用ViewDragHelper来实现
  * @Param:
@@ -176,6 +178,9 @@ public class SwipeBackLayout extends LinearLayout {
      * @param context
      */
     private void init(Context context) {
+
+        RegisterHelper.verify();
+
         mLayoutInflater = LayoutInflater.from(context);
         mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
         // 获取屏幕的高度和宽度
