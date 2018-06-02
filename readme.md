@@ -3,8 +3,9 @@
 
 # 日志 #
 
-## v2.3 ##
+## v2.4 ##
 1.minSdkVersion 修改为19
+2.修改为jar文件
 
 ## v2.2 ##
 1.添加混淆
@@ -32,7 +33,7 @@
 2.app build.gradle
 
 `dependencies {
-	         compile 'com.github.zhangliangming:SwipeBackLayout:v2.3'
+	         compile 'com.github.zhangliangming:SwipeBackLayout:v2.4'
 	}`
 
 # 混淆注意 #
