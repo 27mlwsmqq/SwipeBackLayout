@@ -32,7 +32,7 @@
 2.app build.gradle
 
 `dependencies {
-	         compile 'com.github.zhangliangming:SwipeBackLayout:v2.5'
+	         compile 'com.github.zhangliangming:SwipeBackLayout:v2.6'
 	}`
 
 # 混淆注意 #
