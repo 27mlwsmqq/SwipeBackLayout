@@ -36,27 +36,32 @@ import com.zlm.libs.register.RegisterHelper;
  */
 public class SwipeBackLayout extends LinearLayout {
     /**
+     *  无
+     */
+    public static final int NONE = -1;
+
+    /**
      * 全部
      */
-    public static final int ALL = -1;
+    public static final int ALL = 0;
 
     /**
      * 左到右
      */
-    public static final int LEFT_TO_RIGHT = 0;
+    public static final int LEFT_TO_RIGHT = 1;
 
     /**
      * 上到下
      */
-    public static final int TOP_TO_BOTTOM = 1;
+    public static final int TOP_TO_BOTTOM = 2;
     /**
      * 全部_左到右
      */
-    private final int ALL_AND_LEFT_TO_RIGHT = 2;
+    private final int ALL_AND_LEFT_TO_RIGHT = 3;
     /**
      * 全部_上到下
      */
-    private final int ALL_AND_TOP_TO_BOTTOM = 3;
+    private final int ALL_AND_TOP_TO_BOTTOM = 4;
     /**
      * 状态打开
      */
@@ -240,7 +245,7 @@ public class SwipeBackLayout extends LinearLayout {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
-        if (mSwipeBackLayout == null)
+        if (mSwipeBackLayout == null || mDragType == NONE)
             super.onInterceptTouchEvent(event);
 
         boolean intercepted = false;
@@ -289,7 +294,7 @@ public class SwipeBackLayout extends LinearLayout {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if (mSwipeBackLayout == null)
+        if (mSwipeBackLayout == null || mDragType == NONE)
             super.onTouchEvent(event);
 
         obtainVelocityTracker(event);
