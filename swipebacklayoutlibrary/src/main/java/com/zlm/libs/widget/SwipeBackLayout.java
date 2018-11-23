@@ -19,6 +19,7 @@ import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.View;
 import android.view.ViewConfiguration;
+import android.view.ViewTreeObserver;
 import android.view.WindowManager;
 import android.view.animation.LinearInterpolator;
 import android.widget.LinearLayout;
@@ -36,7 +37,7 @@ import com.zlm.libs.register.RegisterHelper;
  */
 public class SwipeBackLayout extends LinearLayout {
     /**
-     *  无
+     * 无
      */
     public static final int NONE = -1;
 
@@ -209,13 +210,19 @@ public class SwipeBackLayout extends LinearLayout {
         mMinimumVelocity = configuration.getScaledMinimumFlingVelocity();
         mMaximumVelocity = configuration.getScaledMaximumFlingVelocity();
 
-        this.post(new Runnable() {
+        //获得ViewTreeObserver
+        final ViewTreeObserver observer = getViewTreeObserver();
+        //注册观察者，监听变化
+        observer.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
-            public void run() {
-                open();
+            public void onGlobalLayout() {
+                //判断ViewTreeObserver 是否alive，如果存活的话移除这个观察者
+                if (observer.isAlive()) {
+                    observer.removeGlobalOnLayoutListener(this);
+                    open();
+                }
             }
         });
-
     }
 
     @Override
@@ -635,7 +642,7 @@ public class SwipeBackLayout extends LinearLayout {
      * @param contentViewCurY
      */
     private void invalidateSwipeBackLayout(int contentViewCurX,
-                                             int contentViewCurY) {
+                                           int contentViewCurY) {
         if (mDragType == LEFT_TO_RIGHT || mDragType == ALL_AND_LEFT_TO_RIGHT) {
             mSwipeBackLayout
                     .layout(contentViewCurX, 0, contentViewCurX
